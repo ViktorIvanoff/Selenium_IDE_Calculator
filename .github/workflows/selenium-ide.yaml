@@ -8,22 +8,22 @@ on:
 
   jobs: 
     build:
-      runs on: ubuntu-latest
+      runs-on: ubuntu-latest
 
-  steps: 
-    - name: Checkout code 
-      uses: actions/checkout@v3
+      steps: 
+      - name: Checkout code 
+        uses: actions/checkout@v3
 
-    - name: Set up .NET COre
-      uses: actions/setup-dotnet@v3
-      with: 
-        dotnet-version: '8.0.x'
+      - name: Set up .Net COre
+        uses: actions/setup-dotnet@v3
+        with: 
+          dotnet-version: '8.0.x'
 
-    - name: Install Dependencies
-      run: dotnet restore
+      - name: Install dependencies
+        run: dotnet restore
 
-    - name: Build
-      run: dotnet build --no-restore
+      - name: Build
+        run: dotnet build --no-restore
 
-    - name: Run Tests
-      run: dotnet test --verbosity normal
+      - name: Run Tests
+        run: dotnet test --verbosity normal
